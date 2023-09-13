@@ -1,0 +1,66 @@
+<!--Design a web page that demonstrates CSS animation to create the following -->
+<!--1. Create a Scrollable text that scrolls from left to right at a given interval
+1i.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            display:flex;
+            font-family: cursive, Arial, sans-serif;
+            font-size: 25px;
+            max-height: 100vh;
+            padding:10%;
+            overflow:hidden;
+        }
+        .scrollable-text{
+            position:absolute;
+            white-space: nowrap;
+            animation: scrollText 10s linear infinite;
+        }
+        .blinking-text{
+            margin: 100px;
+            animation: blinkText 1s alternate infinite;
+        }
+        @keyframes scrollText{
+            0%{
+                transform: translateX(100%);
+                color:red;
+            }
+            25%{
+                color:orange;
+            }
+            50%{
+                color:blue;
+            }
+            75%{
+                color:green;
+            }
+            100%{
+                transform: translateX(-100%);
+                color:red;
+            }
+        }@keyframes blinkText{
+            0%, 100%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0%;
+            }
+        }
+    </style>
+    <title>CSS Animation Demo</title>
+</head>
+<body>
+    <div class="scrollable-text">
+       <p>This is a scrollable text that scrolls from left to right.</p>
+    </div>
+    <div class="blinking-text">
+        <p>This is a blinking text that blinks at regular intervals.</p>
+    </div>
+</body>
+</html>
+
